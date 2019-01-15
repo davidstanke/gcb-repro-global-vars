@@ -1,0 +1,11 @@
+steps:
+- name: 'gcr.io/cloud-builders/curl'
+  entrypoint: '/bin/bash'
+  args: ["-c","env | grep -i 'VAR*'"]
+options:
+  env:
+  - "VAR_1_BUILTIN=$PROJECT_ID"
+  - "VAR_2_LITERAL=hello"
+  # - "VAR_3_CUSTOM=$_CUSTOM_VAR"
+# substitutions:
+#   _CUSTOM_VAR: world
